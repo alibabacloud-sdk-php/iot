@@ -5,14 +5,16 @@ namespace AlibabaCloud\Iot\V20180120;
 use AlibabaCloud\Rpc;
 
 /**
- * Api GetGatewayBySubDevice
+ * Api SetDeviceDesiredProperty
  *
  * @method string getIotId()
+ * @method string getVersions()
  * @method string getIotInstanceId()
  * @method string getDeviceName()
  * @method string getProductKey()
+ * @method string getItems()
  */
-class GetGatewayBySubDevice extends Rpc
+class SetDeviceDesiredProperty extends Rpc
 {
     public $product = 'Iot';
 
@@ -29,6 +31,19 @@ class GetGatewayBySubDevice extends Rpc
     {
         $this->data['IotId'] = $iotId;
         $this->options['query']['IotId'] = $iotId;
+
+        return $this;
+    }
+
+    /**
+     * @param string $versions
+     *
+     * @return $this
+     */
+    public function withVersions($versions)
+    {
+        $this->data['Versions'] = $versions;
+        $this->options['query']['Versions'] = $versions;
 
         return $this;
     }
@@ -68,6 +83,19 @@ class GetGatewayBySubDevice extends Rpc
     {
         $this->data['ProductKey'] = $productKey;
         $this->options['query']['ProductKey'] = $productKey;
+
+        return $this;
+    }
+
+    /**
+     * @param string $items
+     *
+     * @return $this
+     */
+    public function withItems($items)
+    {
+        $this->data['Items'] = $items;
+        $this->options['query']['Items'] = $items;
 
         return $this;
     }
