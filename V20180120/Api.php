@@ -2,7 +2,103 @@
 
 namespace AlibabaCloud\Iot\V20180120;
 
+use AlibabaCloud\ApiResolverTrait;
 use AlibabaCloud\Rpc;
+
+/**
+ * Resolve Api based on the method name.
+ *
+ * @method RamAuth ramAuth(array $options = [])
+ * @method SetDeviceDesiredProperty setDeviceDesiredProperty(array $options = [])
+ * @method QueryDeviceDesiredProperty queryDeviceDesiredProperty(array $options = [])
+ * @method IdleService idleService(array $options = [])
+ * @method CreateProductTags createProductTags(array $options = [])
+ * @method UpdateProductTags updateProductTags(array $options = [])
+ * @method ListProductTags listProductTags(array $options = [])
+ * @method ListProductByTags listProductByTags(array $options = [])
+ * @method DeleteProductTags deleteProductTags(array $options = [])
+ * @method QueryDeviceGroupByTags queryDeviceGroupByTags(array $options = [])
+ * @method QueryDeviceListByDeviceGroup queryDeviceListByDeviceGroup(array $options = [])
+ * @method QuerySuperDeviceGroup querySuperDeviceGroup(array $options = [])
+ * @method QueryDeviceByTags queryDeviceByTags(array $options = [])
+ * @method SetDeviceGroupTags setDeviceGroupTags(array $options = [])
+ * @method InvokeThingsService invokeThingsService(array $options = [])
+ * @method SetDevicesProperty setDevicesProperty(array $options = [])
+ * @method QueryDevicePropertiesData queryDevicePropertiesData(array $options = [])
+ * @method QueryAppDeviceList queryAppDeviceList(array $options = [])
+ * @method UpdateDeviceGroup updateDeviceGroup(array $options = [])
+ * @method QueryDeviceGroupTagList queryDeviceGroupTagList(array $options = [])
+ * @method QueryDeviceGroupList queryDeviceGroupList(array $options = [])
+ * @method QueryDeviceGroupInfo queryDeviceGroupInfo(array $options = [])
+ * @method QueryDeviceGroupByDevice queryDeviceGroupByDevice(array $options = [])
+ * @method DeleteDeviceGroup deleteDeviceGroup(array $options = [])
+ * @method CreateDeviceGroup createDeviceGroup(array $options = [])
+ * @method BatchDeleteDeviceGroupRelations batchDeleteDeviceGroupRelations(array $options = [])
+ * @method BatchAddDeviceGroupRelations batchAddDeviceGroupRelations(array $options = [])
+ * @method SaveDeviceProp saveDeviceProp(array $options = [])
+ * @method DeleteDeviceProp deleteDeviceProp(array $options = [])
+ * @method QueryPageByApplyId queryPageByApplyId(array $options = [])
+ * @method QueryDevice queryDevice(array $options = [])
+ * @method BatchGetDeviceState batchGetDeviceState(array $options = [])
+ * @method RRpc rRpc(array $options = [])
+ * @method QueryTopicReverseRouteTable queryTopicReverseRouteTable(array $options = [])
+ * @method QueryTopicRouteTable queryTopicRouteTable(array $options = [])
+ * @method PubBroadcast pubBroadcast(array $options = [])
+ * @method DeleteTopicRouteTable deleteTopicRouteTable(array $options = [])
+ * @method CreateTopicRouteTable createTopicRouteTable(array $options = [])
+ * @method QueryAhDeviceList queryAhDeviceList(array $options = [])
+ * @method AhQueryDeviceList ahQueryDeviceList(array $options = [])
+ * @method QueryDeviceProp queryDeviceProp(array $options = [])
+ * @method CreateRuleAction createRuleAction(array $options = [])
+ * @method CreateRule createRule(array $options = [])
+ * @method ListRuleActions listRuleActions(array $options = [])
+ * @method StartRule startRule(array $options = [])
+ * @method QueryProductTopic queryProductTopic(array $options = [])
+ * @method DeleteRuleAction deleteRuleAction(array $options = [])
+ * @method StopRule stopRule(array $options = [])
+ * @method Pub pub(array $options = [])
+ * @method ListRule listRule(array $options = [])
+ * @method GetRule getRule(array $options = [])
+ * @method CreateProductTopic createProductTopic(array $options = [])
+ * @method GetDeviceShadow getDeviceShadow(array $options = [])
+ * @method DeleteProductTopic deleteProductTopic(array $options = [])
+ * @method DeleteRule deleteRule(array $options = [])
+ * @method UpdateProductTopic updateProductTopic(array $options = [])
+ * @method GetRuleAction getRuleAction(array $options = [])
+ * @method UpdateRuleAction updateRuleAction(array $options = [])
+ * @method UpdateDeviceShadow updateDeviceShadow(array $options = [])
+ * @method UpdateRule updateRule(array $options = [])
+ * @method GetGatewayBySubDevice getGatewayBySubDevice(array $options = [])
+ * @method QueryBatchRegisterDeviceStatus queryBatchRegisterDeviceStatus(array $options = [])
+ * @method RemoveThingTopo removeThingTopo(array $options = [])
+ * @method GetThingTopo getThingTopo(array $options = [])
+ * @method NotifyAddThingTopo notifyAddThingTopo(array $options = [])
+ * @method QueryDevicePropertyData queryDevicePropertyData(array $options = [])
+ * @method QueryDevicePropertyStatus queryDevicePropertyStatus(array $options = [])
+ * @method BatchRegisterDevice batchRegisterDevice(array $options = [])
+ * @method BatchRegisterDeviceWithApplyId batchRegisterDeviceWithApplyId(array $options = [])
+ * @method BatchCheckDeviceNames batchCheckDeviceNames(array $options = [])
+ * @method UpdateProduct updateProduct(array $options = [])
+ * @method RegisterDevice registerDevice(array $options = [])
+ * @method SetDeviceProperty setDeviceProperty(array $options = [])
+ * @method QueryProductList queryProductList(array $options = [])
+ * @method QueryDeviceStatistics queryDeviceStatistics(array $options = [])
+ * @method QueryProduct queryProduct(array $options = [])
+ * @method QueryDeviceEventData queryDeviceEventData(array $options = [])
+ * @method QueryDeviceServiceData queryDeviceServiceData(array $options = [])
+ * @method QueryDeviceDetail queryDeviceDetail(array $options = [])
+ * @method InvokeThingService invokeThingService(array $options = [])
+ * @method GetDeviceStatus getDeviceStatus(array $options = [])
+ * @method DisableThing disableThing(array $options = [])
+ * @method EnableThing enableThing(array $options = [])
+ * @method DeleteDevice deleteDevice(array $options = [])
+ * @method DeleteProduct deleteProduct(array $options = [])
+ * @method CreateProduct createProduct(array $options = [])
+ */
+class IotApiResolver
+{
+    use ApiResolverTrait;
+}
 
 class V20180120Rpc extends Rpc
 {
@@ -57,14 +153,14 @@ class QueryDeviceDesiredProperty extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $identifier
      *
      * @return $this
      */
-    public function withIdentifier(array $value)
+    public function withIdentifier(array $identifier)
     {
-        $this->data['Identifier'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['Identifier'] = $identifier;
+        foreach ($identifier as $i => $iValue) {
             $this->options['query']['Identifier.' . ($i + 1)] = $iValue;
         }
 
@@ -91,16 +187,16 @@ class CreateProductTags extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $productTag
      *
      * @return $this
      */
-    public function withProductTag(array $value)
+    public function withProductTag(array $productTag)
     {
-        $this->data['ProductTag'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['ProductTag.' . ($i + 1) . '.TagValue'] = $value[$i]['TagValue'];
-            $this->options['query']['ProductTag.' . ($i + 1) . '.TagKey'] = $value[$i]['TagKey'];
+        $this->data['ProductTag'] = $productTag;
+        foreach ($productTag as $depth1 => $depth1Value) {
+            $this->options['query']['ProductTag.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
+            $this->options['query']['ProductTag.' . ($depth1 + 1) . '.TagKey'] = $depth1Value['TagKey'];
         }
 
         return $this;
@@ -118,16 +214,16 @@ class UpdateProductTags extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $productTag
      *
      * @return $this
      */
-    public function withProductTag(array $value)
+    public function withProductTag(array $productTag)
     {
-        $this->data['ProductTag'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['ProductTag.' . ($i + 1) . '.TagValue'] = $value[$i]['TagValue'];
-            $this->options['query']['ProductTag.' . ($i + 1) . '.TagKey'] = $value[$i]['TagKey'];
+        $this->data['ProductTag'] = $productTag;
+        foreach ($productTag as $depth1 => $depth1Value) {
+            $this->options['query']['ProductTag.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
+            $this->options['query']['ProductTag.' . ($depth1 + 1) . '.TagKey'] = $depth1Value['TagKey'];
         }
 
         return $this;
@@ -157,16 +253,16 @@ class ListProductByTags extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $productTag
      *
      * @return $this
      */
-    public function withProductTag(array $value)
+    public function withProductTag(array $productTag)
     {
-        $this->data['ProductTag'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['ProductTag.' . ($i + 1) . '.TagValue'] = $value[$i]['TagValue'];
-            $this->options['query']['ProductTag.' . ($i + 1) . '.TagKey'] = $value[$i]['TagKey'];
+        $this->data['ProductTag'] = $productTag;
+        foreach ($productTag as $depth1 => $depth1Value) {
+            $this->options['query']['ProductTag.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
+            $this->options['query']['ProductTag.' . ($depth1 + 1) . '.TagKey'] = $depth1Value['TagKey'];
         }
 
         return $this;
@@ -184,14 +280,14 @@ class DeleteProductTags extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $productTagKey
      *
      * @return $this
      */
-    public function withProductTagKey(array $value)
+    public function withProductTagKey(array $productTagKey)
     {
-        $this->data['ProductTagKey'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['ProductTagKey'] = $productTagKey;
+        foreach ($productTagKey as $i => $iValue) {
             $this->options['query']['ProductTagKey.' . ($i + 1)] = $iValue;
         }
 
@@ -212,16 +308,16 @@ class QueryDeviceGroupByTags extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $tag
      *
      * @return $this
      */
-    public function withTag(array $value)
+    public function withTag(array $tag)
     {
-        $this->data['Tag'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Tag.' . ($i + 1) . '.TagValue'] = $value[$i]['TagValue'];
-            $this->options['query']['Tag.' . ($i + 1) . '.TagKey'] = $value[$i]['TagKey'];
+        $this->data['Tag'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->options['query']['Tag.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
+            $this->options['query']['Tag.' . ($depth1 + 1) . '.TagKey'] = $depth1Value['TagKey'];
         }
 
         return $this;
@@ -265,16 +361,16 @@ class QueryDeviceByTags extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $tag
      *
      * @return $this
      */
-    public function withTag(array $value)
+    public function withTag(array $tag)
     {
-        $this->data['Tag'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Tag.' . ($i + 1) . '.TagValue'] = $value[$i]['TagValue'];
-            $this->options['query']['Tag.' . ($i + 1) . '.TagKey'] = $value[$i]['TagKey'];
+        $this->data['Tag'] = $tag;
+        foreach ($tag as $depth1 => $depth1Value) {
+            $this->options['query']['Tag.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
+            $this->options['query']['Tag.' . ($depth1 + 1) . '.TagKey'] = $depth1Value['TagKey'];
         }
 
         return $this;
@@ -308,14 +404,14 @@ class InvokeThingsService extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $deviceName
      *
      * @return $this
      */
-    public function withDeviceName(array $value)
+    public function withDeviceName(array $deviceName)
     {
-        $this->data['DeviceName'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['DeviceName'] = $deviceName;
+        foreach ($deviceName as $i => $iValue) {
             $this->options['query']['DeviceName.' . ($i + 1)] = $iValue;
         }
 
@@ -336,14 +432,14 @@ class SetDevicesProperty extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $deviceName
      *
      * @return $this
      */
-    public function withDeviceName(array $value)
+    public function withDeviceName(array $deviceName)
     {
-        $this->data['DeviceName'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['DeviceName'] = $deviceName;
+        foreach ($deviceName as $i => $iValue) {
             $this->options['query']['DeviceName.' . ($i + 1)] = $iValue;
         }
 
@@ -374,14 +470,14 @@ class QueryDevicePropertiesData extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $identifier
      *
      * @return $this
      */
-    public function withIdentifier(array $value)
+    public function withIdentifier(array $identifier)
     {
-        $this->data['Identifier'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['Identifier'] = $identifier;
+        foreach ($identifier as $i => $iValue) {
             $this->options['query']['Identifier.' . ($i + 1)] = $iValue;
         }
 
@@ -406,14 +502,14 @@ class QueryAppDeviceList extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $productKeyList
      *
      * @return $this
      */
-    public function withProductKeyList(array $value)
+    public function withProductKeyList(array $productKeyList)
     {
-        $this->data['ProductKeyList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['ProductKeyList'] = $productKeyList;
+        foreach ($productKeyList as $i => $iValue) {
             $this->options['query']['ProductKeyList.' . ($i + 1)] = $iValue;
         }
 
@@ -421,14 +517,14 @@ class QueryAppDeviceList extends V20180120Rpc
     }
 
     /**
-     * @param array $value
+     * @param array $categoryKeyList
      *
      * @return $this
      */
-    public function withCategoryKeyList(array $value)
+    public function withCategoryKeyList(array $categoryKeyList)
     {
-        $this->data['CategoryKeyList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['CategoryKeyList'] = $categoryKeyList;
+        foreach ($categoryKeyList as $i => $iValue) {
             $this->options['query']['CategoryKeyList.' . ($i + 1)] = $iValue;
         }
 
@@ -436,16 +532,16 @@ class QueryAppDeviceList extends V20180120Rpc
     }
 
     /**
-     * @param array $value
+     * @param array $tagList
      *
      * @return $this
      */
-    public function withTagList(array $value)
+    public function withTagList(array $tagList)
     {
-        $this->data['TagList'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['TagList.' . ($i + 1) . '.TagName'] = $value[$i]['TagName'];
-            $this->options['query']['TagList.' . ($i + 1) . '.TagValue'] = $value[$i]['TagValue'];
+        $this->data['TagList'] = $tagList;
+        foreach ($tagList as $depth1 => $depth1Value) {
+            $this->options['query']['TagList.' . ($depth1 + 1) . '.TagName'] = $depth1Value['TagName'];
+            $this->options['query']['TagList.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
         }
 
         return $this;
@@ -547,16 +643,16 @@ class BatchDeleteDeviceGroupRelations extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $device
      *
      * @return $this
      */
-    public function withDevice(array $value)
+    public function withDevice(array $device)
     {
-        $this->data['Device'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Device.' . ($i + 1) . '.DeviceName'] = $value[$i]['DeviceName'];
-            $this->options['query']['Device.' . ($i + 1) . '.ProductKey'] = $value[$i]['ProductKey'];
+        $this->data['Device'] = $device;
+        foreach ($device as $depth1 => $depth1Value) {
+            $this->options['query']['Device.' . ($depth1 + 1) . '.DeviceName'] = $depth1Value['DeviceName'];
+            $this->options['query']['Device.' . ($depth1 + 1) . '.ProductKey'] = $depth1Value['ProductKey'];
         }
 
         return $this;
@@ -574,16 +670,16 @@ class BatchAddDeviceGroupRelations extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $device
      *
      * @return $this
      */
-    public function withDevice(array $value)
+    public function withDevice(array $device)
     {
-        $this->data['Device'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['Device.' . ($i + 1) . '.DeviceName'] = $value[$i]['DeviceName'];
-            $this->options['query']['Device.' . ($i + 1) . '.ProductKey'] = $value[$i]['ProductKey'];
+        $this->data['Device'] = $device;
+        foreach ($device as $depth1 => $depth1Value) {
+            $this->options['query']['Device.' . ($depth1 + 1) . '.DeviceName'] = $depth1Value['DeviceName'];
+            $this->options['query']['Device.' . ($depth1 + 1) . '.ProductKey'] = $depth1Value['ProductKey'];
         }
 
         return $this;
@@ -662,14 +758,14 @@ class BatchGetDeviceState extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $iotId
      *
      * @return $this
      */
-    public function withIotId(array $value)
+    public function withIotId(array $iotId)
     {
-        $this->data['IotId'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['IotId'] = $iotId;
+        foreach ($iotId as $i => $iValue) {
             $this->options['query']['IotId.' . ($i + 1)] = $iValue;
         }
 
@@ -677,14 +773,14 @@ class BatchGetDeviceState extends V20180120Rpc
     }
 
     /**
-     * @param array $value
+     * @param array $deviceName
      *
      * @return $this
      */
-    public function withDeviceName(array $value)
+    public function withDeviceName(array $deviceName)
     {
-        $this->data['DeviceName'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['DeviceName'] = $deviceName;
+        foreach ($deviceName as $i => $iValue) {
             $this->options['query']['DeviceName.' . ($i + 1)] = $iValue;
         }
 
@@ -755,14 +851,14 @@ class DeleteTopicRouteTable extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $dstTopic
      *
      * @return $this
      */
-    public function withDstTopic(array $value)
+    public function withDstTopic(array $dstTopic)
     {
-        $this->data['DstTopic'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['DstTopic'] = $dstTopic;
+        foreach ($dstTopic as $i => $iValue) {
             $this->options['query']['DstTopic.' . ($i + 1)] = $iValue;
         }
 
@@ -781,14 +877,14 @@ class CreateTopicRouteTable extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $dstTopic
      *
      * @return $this
      */
-    public function withDstTopic(array $value)
+    public function withDstTopic(array $dstTopic)
     {
-        $this->data['DstTopic'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['DstTopic'] = $dstTopic;
+        foreach ($dstTopic as $i => $iValue) {
             $this->options['query']['DstTopic.' . ($i + 1)] = $iValue;
         }
 
@@ -811,14 +907,14 @@ class QueryAhDeviceList extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $productKeyList
      *
      * @return $this
      */
-    public function withProductKeyList(array $value)
+    public function withProductKeyList(array $productKeyList)
     {
-        $this->data['ProductKeyList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['ProductKeyList'] = $productKeyList;
+        foreach ($productKeyList as $i => $iValue) {
             $this->options['query']['ProductKeyList.' . ($i + 1)] = $iValue;
         }
 
@@ -826,14 +922,14 @@ class QueryAhDeviceList extends V20180120Rpc
     }
 
     /**
-     * @param array $value
+     * @param array $categoryKeyList
      *
      * @return $this
      */
-    public function withCategoryKeyList(array $value)
+    public function withCategoryKeyList(array $categoryKeyList)
     {
-        $this->data['CategoryKeyList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['CategoryKeyList'] = $categoryKeyList;
+        foreach ($categoryKeyList as $i => $iValue) {
             $this->options['query']['CategoryKeyList.' . ($i + 1)] = $iValue;
         }
 
@@ -841,16 +937,16 @@ class QueryAhDeviceList extends V20180120Rpc
     }
 
     /**
-     * @param array $value
+     * @param array $tagList
      *
      * @return $this
      */
-    public function withTagList(array $value)
+    public function withTagList(array $tagList)
     {
-        $this->data['TagList'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['TagList.' . ($i + 1) . '.TagName'] = $value[$i]['TagName'];
-            $this->options['query']['TagList.' . ($i + 1) . '.TagValue'] = $value[$i]['TagValue'];
+        $this->data['TagList'] = $tagList;
+        foreach ($tagList as $depth1 => $depth1Value) {
+            $this->options['query']['TagList.' . ($depth1 + 1) . '.TagName'] = $depth1Value['TagName'];
+            $this->options['query']['TagList.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
         }
 
         return $this;
@@ -872,14 +968,14 @@ class AhQueryDeviceList extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $productKeyList
      *
      * @return $this
      */
-    public function withProductKeyList(array $value)
+    public function withProductKeyList(array $productKeyList)
     {
-        $this->data['ProductKeyList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['ProductKeyList'] = $productKeyList;
+        foreach ($productKeyList as $i => $iValue) {
             $this->options['query']['ProductKeyList.' . ($i + 1)] = $iValue;
         }
 
@@ -887,14 +983,14 @@ class AhQueryDeviceList extends V20180120Rpc
     }
 
     /**
-     * @param array $value
+     * @param array $categoryKeyList
      *
      * @return $this
      */
-    public function withCategoryKeyList(array $value)
+    public function withCategoryKeyList(array $categoryKeyList)
     {
-        $this->data['CategoryKeyList'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['CategoryKeyList'] = $categoryKeyList;
+        foreach ($categoryKeyList as $i => $iValue) {
             $this->options['query']['CategoryKeyList.' . ($i + 1)] = $iValue;
         }
 
@@ -902,16 +998,16 @@ class AhQueryDeviceList extends V20180120Rpc
     }
 
     /**
-     * @param array $value
+     * @param array $tagList
      *
      * @return $this
      */
-    public function withTagList(array $value)
+    public function withTagList(array $tagList)
     {
-        $this->data['TagList'] = $value;
-        foreach ($value as $i => $iValue) {
-            $this->options['query']['TagList.' . ($i + 1) . '.TagName'] = $value[$i]['TagName'];
-            $this->options['query']['TagList.' . ($i + 1) . '.TagValue'] = $value[$i]['TagValue'];
+        $this->data['TagList'] = $tagList;
+        foreach ($tagList as $depth1 => $depth1Value) {
+            $this->options['query']['TagList.' . ($depth1 + 1) . '.TagName'] = $depth1Value['TagName'];
+            $this->options['query']['TagList.' . ($depth1 + 1) . '.TagValue'] = $depth1Value['TagValue'];
         }
 
         return $this;
@@ -1337,14 +1433,14 @@ class BatchCheckDeviceNames extends V20180120Rpc
 {
 
     /**
-     * @param array $value
+     * @param array $deviceName
      *
      * @return $this
      */
-    public function withDeviceName(array $value)
+    public function withDeviceName(array $deviceName)
     {
-        $this->data['DeviceName'] = $value;
-        foreach ($value as $i => $iValue) {
+        $this->data['DeviceName'] = $deviceName;
+        foreach ($deviceName as $i => $iValue) {
             $this->options['query']['DeviceName.' . ($i + 1)] = $iValue;
         }
 
