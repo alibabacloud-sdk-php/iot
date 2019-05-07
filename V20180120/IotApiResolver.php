@@ -8,6 +8,19 @@ use AlibabaCloud\Rpc;
 /**
  * Resolve Api based on the method name.
  *
+ * @method QueryLoRaJoinPermissions queryLoRaJoinPermissions(array $options = [])
+ * @method QueryDeviceJobDocument queryDeviceJobDocument(array $options = [])
+ * @method QueryDeviceTask queryDeviceTask(array $options = [])
+ * @method QueryDeviceTaskListByDevice queryDeviceTaskListByDevice(array $options = [])
+ * @method QueryDeviceTaskListByJob queryDeviceTaskListByJob(array $options = [])
+ * @method DeleteDeviceJob deleteDeviceJob(array $options = [])
+ * @method CancelDeviceTask cancelDeviceTask(array $options = [])
+ * @method DeleteDeviceTask deleteDeviceTask(array $options = [])
+ * @method QueryDeviceJob queryDeviceJob(array $options = [])
+ * @method QueryDeviceJobList queryDeviceJobList(array $options = [])
+ * @method UpdateDeviceJob updateDeviceJob(array $options = [])
+ * @method CancelDeviceJob cancelDeviceJob(array $options = [])
+ * @method CreateDeviceJob createDeviceJob(array $options = [])
  * @method GetLoraNodesTask getLoraNodesTask(array $options = [])
  * @method CreateLoRaNodesTask createLoRaNodesTask(array $options = [])
  * @method QueryDeviceFile queryDeviceFile(array $options = [])
@@ -114,6 +127,262 @@ class V20180120Rpc extends Rpc
 
     /** @var string */
     public $method = 'POST';
+}
+
+/**
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ */
+class QueryLoRaJoinPermissions extends V20180120Rpc
+{
+}
+
+/**
+ * @method string getJobId()
+ * @method $this withJobId($value)
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ */
+class QueryDeviceJobDocument extends V20180120Rpc
+{
+}
+
+/**
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ * @method string getTaskId()
+ * @method $this withTaskId($value)
+ */
+class QueryDeviceTask extends V20180120Rpc
+{
+}
+
+/**
+ * @method string getIotId()
+ * @method $this withIotId($value)
+ * @method array getTaskStatus()
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ * @method string getPageSize()
+ * @method $this withPageSize($value)
+ * @method string getCurrentPage()
+ * @method $this withCurrentPage($value)
+ * @method string getDeviceName()
+ * @method $this withDeviceName($value)
+ * @method string getProductKey()
+ * @method $this withProductKey($value)
+ */
+class QueryDeviceTaskListByDevice extends V20180120Rpc
+{
+
+    /**
+     * @param array $taskStatus
+     *
+     * @return $this
+     */
+    public function withTaskStatus(array $taskStatus)
+    {
+        $this->data['TaskStatus'] = $taskStatus;
+        foreach ($taskStatus as $i => $iValue) {
+            $this->options['query']['TaskStatus.' . ($i + 1)] = $iValue;
+        }
+
+        return $this;
+    }
+}
+
+/**
+ * @method string getJobId()
+ * @method $this withJobId($value)
+ * @method array getTaskStatus()
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ * @method string getPageSize()
+ * @method $this withPageSize($value)
+ * @method string getCurrentPage()
+ * @method $this withCurrentPage($value)
+ */
+class QueryDeviceTaskListByJob extends V20180120Rpc
+{
+
+    /**
+     * @param array $taskStatus
+     *
+     * @return $this
+     */
+    public function withTaskStatus(array $taskStatus)
+    {
+        $this->data['TaskStatus'] = $taskStatus;
+        foreach ($taskStatus as $i => $iValue) {
+            $this->options['query']['TaskStatus.' . ($i + 1)] = $iValue;
+        }
+
+        return $this;
+    }
+}
+
+/**
+ * @method string getJobId()
+ * @method $this withJobId($value)
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ * @method string getForce()
+ * @method $this withForce($value)
+ */
+class DeleteDeviceJob extends V20180120Rpc
+{
+}
+
+/**
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ * @method string getForce()
+ * @method $this withForce($value)
+ * @method string getTaskId()
+ * @method $this withTaskId($value)
+ */
+class CancelDeviceTask extends V20180120Rpc
+{
+}
+
+/**
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ * @method string getTaskId()
+ * @method $this withTaskId($value)
+ */
+class DeleteDeviceTask extends V20180120Rpc
+{
+}
+
+/**
+ * @method string getJobId()
+ * @method $this withJobId($value)
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ */
+class QueryDeviceJob extends V20180120Rpc
+{
+}
+
+/**
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ * @method string getPageSize()
+ * @method $this withPageSize($value)
+ * @method string getCurrentPage()
+ * @method $this withCurrentPage($value)
+ */
+class QueryDeviceJobList extends V20180120Rpc
+{
+}
+
+/**
+ * @method string getJobId()
+ * @method $this withJobId($value)
+ * @method string getJobConfig()
+ * @method $this withJobConfig($value)
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ * @method string getDescription()
+ * @method $this withDescription($value)
+ * @method string getJobName()
+ * @method $this withJobName($value)
+ */
+class UpdateDeviceJob extends V20180120Rpc
+{
+}
+
+/**
+ * @method string getJobId()
+ * @method $this withJobId($value)
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ * @method string getForce()
+ * @method $this withForce($value)
+ */
+class CancelDeviceJob extends V20180120Rpc
+{
+}
+
+/**
+ * @method string getJobDocument()
+ * @method $this withJobDocument($value)
+ * @method array getTargetGroup()
+ * @method string getPresignedUrlConfig()
+ * @method $this withPresignedUrlConfig($value)
+ * @method string getDescription()
+ * @method $this withDescription($value)
+ * @method string getType()
+ * @method $this withType($value)
+ * @method string getRolloutConfig()
+ * @method $this withRolloutConfig($value)
+ * @method array getTargetProduct()
+ * @method string getIotInstanceId()
+ * @method $this withIotInstanceId($value)
+ * @method string getTargetSelection()
+ * @method $this withTargetSelection($value)
+ * @method string getJobDocumentSource()
+ * @method $this withJobDocumentSource($value)
+ * @method string getAbortConfig()
+ * @method $this withAbortConfig($value)
+ * @method string getJobName()
+ * @method $this withJobName($value)
+ * @method string getTargetDevicesSource()
+ * @method $this withTargetDevicesSource($value)
+ * @method string getTimeoutConfig()
+ * @method $this withTimeoutConfig($value)
+ * @method array getTargetDevice()
+ */
+class CreateDeviceJob extends V20180120Rpc
+{
+
+    /**
+     * @param array $targetGroup
+     *
+     * @return $this
+     */
+    public function withTargetGroup(array $targetGroup)
+    {
+        $this->data['TargetGroup'] = $targetGroup;
+        foreach ($targetGroup as $i => $iValue) {
+            $this->options['query']['TargetGroup.' . ($i + 1)] = $iValue;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param array $targetProduct
+     *
+     * @return $this
+     */
+    public function withTargetProduct(array $targetProduct)
+    {
+        $this->data['TargetProduct'] = $targetProduct;
+        foreach ($targetProduct as $i => $iValue) {
+            $this->options['query']['TargetProduct.' . ($i + 1)] = $iValue;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param array $targetDevice
+     *
+     * @return $this
+     */
+    public function withTargetDevice(array $targetDevice)
+    {
+        $this->data['TargetDevice'] = $targetDevice;
+        foreach ($targetDevice as $depth1 => $depth1Value) {
+            $this->options['query']['TargetDevice.' . ($depth1 + 1) . '.IotId'] = $depth1Value['IotId'];
+            $this->options['query']['TargetDevice.' . ($depth1 + 1) . '.DeviceName'] = $depth1Value['DeviceName'];
+            $this->options['query']['TargetDevice.' . ($depth1 + 1) . '.ProductKey'] = $depth1Value['ProductKey'];
+        }
+
+        return $this;
+    }
 }
 
 /**
